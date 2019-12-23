@@ -20,9 +20,17 @@ namespace MvcTodoList.Controllers
         }
 
         // GET: TodoList
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Todos.ToListAsync());
+            var todoList = from t in _context.Todos
+                            select t;
+            
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                todoList = todoList.Where(t => t.Content.Contains(searchString));
+            }
+
+            return View(await todoList.ToListAsync());
         }
 
         // GET: TodoList/Details/5
