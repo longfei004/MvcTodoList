@@ -20,7 +20,7 @@ namespace MvcTodoList.Controllers
         }
 
         // GET: TodoList
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string isDone)
         {
             var todoList = from t in _context.Todos
                             select t;
@@ -30,7 +30,18 @@ namespace MvcTodoList.Controllers
                 todoList = todoList.Where(t => t.Content.Contains(searchString));
             }
 
-            return View(await todoList.ToListAsync());
+            if(!String.IsNullOrEmpty(isDone))
+            {
+                bool todoIsDone = isDone == "done" ? true : false;
+                todoList = todoList.Where(t => t.IsDone == todoIsDone);
+            }
+
+            var todoFilterVM = new TodoFilterViewModel
+            {
+                Todos = await todoList.ToListAsync()
+            };
+
+            return View(todoFilterVM);
         }
 
         // GET: TodoList/Details/5
