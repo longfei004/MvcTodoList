@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using MvcTodoList.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace MvcTodoList
 {
     public class Startup
@@ -24,6 +27,9 @@ namespace MvcTodoList
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<MvcTodoListContext>(options => 
+                    options.UseSqlite(Configuration.GetConnectionString("MvcTodoListContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
