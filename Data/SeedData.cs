@@ -24,7 +24,15 @@ namespace MvcTodoList.Data
                   {
                       Content = "Learning C#",
                       ExpectFinishedDate = DateTime.Parse("2019-12-25"),
-                      IsDone = false
+                      IsDone = false,
+                      AssignTo = "Bill"
+                  },
+                  new Todo
+                  {
+                      Content = "Watching movie",
+                      ExpectFinishedDate = DateTime.Parse("2019-12-28"),
+                      IsDone = false,
+                      AssignTo = "Tina"
                   }
                 );
 

@@ -14,5 +14,7 @@ namespace MvcTodoList.Models
         public DateTime ExpectFinishedDate { get; set; }
 
         public bool IsDone { get; set; }
+
+        public string AssignTo { get; set; }
     }
 }

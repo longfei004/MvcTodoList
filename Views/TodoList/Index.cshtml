@@ -34,6 +34,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Todos[0].IsDone)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todos[0].AssignTo)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -48,6 +51,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IsDone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignTo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
