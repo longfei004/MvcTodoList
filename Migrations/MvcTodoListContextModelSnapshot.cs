@@ -22,6 +22,9 @@ namespace MvcTodoList.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("AssignTo")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Content")
                         .HasColumnType("TEXT");
 

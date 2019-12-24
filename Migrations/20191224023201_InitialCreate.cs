@@ -15,7 +15,8 @@ namespace MvcTodoList.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Content = table.Column<string>(nullable: true),
                     ExpectFinishedDate = table.Column<DateTime>(nullable: false),
-                    IsDone = table.Column<bool>(nullable: false)
+                    IsDone = table.Column<bool>(nullable: false),
+                    AssignTo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

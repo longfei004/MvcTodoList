@@ -9,7 +9,7 @@ using MvcTodoList.Data;
 namespace MvcTodoList.Migrations
 {
     [DbContext(typeof(MvcTodoListContext))]
-    [Migration("20191223063132_InitialCreate")]
+    [Migration("20191224023201_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,9 @@ namespace MvcTodoList.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("AssignTo")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Content")
                         .HasColumnType("TEXT");
