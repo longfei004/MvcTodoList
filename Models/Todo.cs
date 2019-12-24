@@ -7,6 +7,8 @@ namespace MvcTodoList.Models
     {
         public int ID { get; set; }
 
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
         public string Content { get; set; }
 
         [Display (Name = "Expect Finished Date")]
@@ -15,6 +17,7 @@ namespace MvcTodoList.Models
 
         public bool IsDone { get; set; }
 
+        [StringLength(20, MinimumLength = 3)]
         public string AssignTo { get; set; }
     }
 }
