@@ -75,6 +75,7 @@ namespace MvcTodoList.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Content,ExpectFinishedDate,IsDone,AssignTo")] Todo todo)
         {
+            // todo
             if (ModelState.IsValid)
             {
                 _context.Add(todo);

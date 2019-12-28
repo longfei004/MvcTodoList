@@ -17,6 +17,7 @@ namespace MvcTodoList
         {
             var host = CreateHostBuilder(args).Build();
 
+            // need to learn
             using(var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
